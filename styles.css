@@ -2,6 +2,7 @@ body
 {
     display: flex;
     justify-content: center;
+    padding-top: 0;
 }
 
 .top-container
@@ -10,16 +11,18 @@ body
     flex-direction: column;
     background-color: #1F2937;
     align-items: center;
+    padding: 20px 200px;
+    margin-top: 0;
 
 }
 
-.header
+.header-container
 {
     display: flex;
-    justify-content: center;
-  
+    justify-content: center; 
+    align-items: center;
+    padding-right: 20px;
     width: 800px;
-    background: red;
 }
 
 h3
@@ -35,7 +38,7 @@ ul
 {
     display: flex;
     list-style: none;
-    gap: 12px;
+    gap: 16px;
     margin: 0;
     padding: 0;
     margin-left: auto;
@@ -51,18 +54,51 @@ li
 {
     display: flex;
     width: 800px;
-    
     margin-top: 100px;
-    background: lightgreen;
+}
+
+h1,
+.desc
+{
+    margin: 0;
+}
+
+h1
+{
+    font-size: 48px;
+    font-weight: 1000;
+    color: #F9FAF8;
 }
 
 .title-and-desc
 {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
+    width: 50%;
+    gap: 10px;
+}
+
+.desc
+{
+    font-size: 18px;
+    color: #E5E7EB;
 }
 
 button
 {
-    width: 50px;
+    width: 100px;
+    height: auto;
+    padding: 8px 14px;
+    margin-top: 10px;
+    border-radius: 8px rgb(0, 102, 255);
+    background: rgb(0, 102, 255);
+    color: white;
+}
+
+.main_image
+{
+    height: 246px;
+    width: auto;
+    margin-left: 50px;
 }
