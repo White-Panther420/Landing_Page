@@ -1,17 +1,26 @@
 body
 {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding-top: 0;
+    background: black;
+
+}
+
+.top-container,
+.middle-container
+{
+    display: flex;
+    flex-direction: column;
+    width: 1200px;
 }
 
 .top-container
 {
-    display: flex;
-    flex-direction: column;
     background-color: #1F2937;
     align-items: center;
-    padding: 20px 200px;
     margin-top: 0;
 
 }
@@ -21,8 +30,8 @@ body
     display: flex;
     justify-content: center; 
     align-items: center;
-    padding-right: 20px;
-    width: 800px;
+    margin-top: 16px;
+    width: 950px;
 }
 
 h3
@@ -53,8 +62,9 @@ li
 .title-and-image-container
 {
     display: flex;
-    width: 800px;
+    width: 950px;
     margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 h1,
@@ -91,14 +101,44 @@ button
     height: auto;
     padding: 8px 14px;
     margin-top: 10px;
-    border-radius: 8px rgb(0, 102, 255);
-    background: rgb(0, 102, 255);
+    border-radius: 8px #3882F6;
+    background: #3882F6;
     color: white;
 }
 
 .main_image
 {
-    height: 246px;
+    height: 346px;
     width: auto;
     margin-left: 50px;
+}
+
+.middle-container
+{
+    background: white;
+    flex-grow: 0;
+}
+
+h2
+{
+    color: #1F2937;
+    font-weight: 1000;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.info-container
+{
+    display: flex;
+    flex-shrink: 1;
+    gap: 32px;
+}
+
+.info
+{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
 }
