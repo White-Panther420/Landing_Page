@@ -9,12 +9,21 @@ body
 
 }
 
+.content-container
+{
+    height: 1700px;
+    background-color: red;
+}
+
 .top-container,
-.middle-container
+.middle-container,
+.testimony-container,
+.bottom-container
 {
     display: flex;
     flex-direction: column;
     width: 1200px;
+    height: 30%;
 }
 
 .top-container
@@ -22,7 +31,6 @@ body
     background-color: #1F2937;
     align-items: center;
     margin-top: 0;
-
 }
 
 .header-container
@@ -63,6 +71,7 @@ li
 {
     display: flex;
     width: 950px;
+    height: 300px;
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -85,8 +94,9 @@ h1
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    width: 50%;
+    width: 40%;
     gap: 10px;
+    flex-shrink: 1;
 }
 
 .desc
@@ -109,7 +119,7 @@ button
 
 .main_image
 {
-    height: 346px;
+    height: 270px;
     width: auto;
     margin-left: 50px;
 }
@@ -117,6 +127,8 @@ button
 .middle-container
 {
     background: white;
+    align-items: center;
+    justify-content: center;
     align-items: center;
 }
 
@@ -126,7 +138,8 @@ h2
     font-weight: 1000;
     font-size: 36px;
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 48px;
+    margin-top: 80px;
 }
 
 .info-container
@@ -135,6 +148,7 @@ h2
     justify-content: center;
     width: 950px;
     gap: 32px;
+    margin-bottom: 80px;
 }
 
 .info
@@ -142,7 +156,7 @@ h2
     display: flex;
     flex-direction: column;
     width: 20%;
-    height: auto;
+    height: 100%;
 }
 
 .info-image
@@ -150,22 +164,21 @@ h2
     height: 150px;
     border-radius: 24px;
     border: 2px solid brown;
-    flex-grow: 1; /*Resizes all images so they can be the same size*/
+    /*Resizes all images so they can be the same size*/
 }
 
 .info-desc
 {
     height: 50%;
+    font-size: 20px;
     text-align: center;
 }
 
 .testimony-container
 {
-    display: flex;
-    flex-direction: column;
     background: #E5E7EB;
-    padding:32px 100px;
-    width: 1000px;
+    justify-content: center;
+    height: 20%;
 }
 
 .testimony
@@ -184,6 +197,64 @@ h2
     text-align: right;
     font-size: 28px;
     font-weight: 800;
-    margin-right:150px;
-    margin-top: -16px;
+    margin-right:250px;
+    margin-top: -48px;
+}
+
+.bottom-container   
+{
+    padding-bottom: 0;
+    align-items: center;
+    background: white;
+    height: 20%;
+    justify-content: center;
+}
+
+.action-container
+{
+    display: flex;
+    background: #3882F6;
+    width: 950px;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-text
+{
+    display: flex;
+    flex-direction: column;   
+}
+
+.action1
+{
+    color: #F9FAF8;
+    font-weight: 800;
+    font-size: 18px;
+    margin-bottom: 0;
+}
+
+.action2
+{
+    color: #E5E7EB;
+    margin-top: 0;
+
+}
+
+.action-container>button
+{
+    border: 2px solid white;
+    margin-left: auto;
+}
+
+.footer
+{
+    background-color: #1F2937;
+    width: 100%;
+}
+
+.footer-text
+{
+    color: #F9FAF8;
+    text-align: center;
+    font-weight: 700;
 }
