@@ -120,6 +120,12 @@ button
     color: white;
 }
 
+a
+{
+    color: white;
+    text-decoration: none;
+}
+
 .main_image
 {
     height: 295px;

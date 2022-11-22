@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-Up</title>
     <link rel="stylesheet" href="sign_up.css">
+    <script src = "landingPage.js" defer></script>
 </head>
 <body>
     <div class="content_container">
@@ -29,41 +30,41 @@
                         <div class="first_and_last_name">
                             <div class="first_name">
                                 <label for="first_name" class="firstName">FIRST NAME</label>
-                                <input type="text" id="first_name" name="firstName" placeholder="first name" value="" pattern="^[^0-9]+$" maxlength="100" required>
+                                <input type="text" id="first_name" name="firstName" placeholder="first name" pattern="^[^0-9]+$" maxlength="100" required>
                             </div>
                             <div class="last_name">
                                 <label for="last_name" class="lastName">LAST NAME</label>
-                                <input type="text" id="last_name" name="lastName" placeholder="last name" value="" pattern="^[^0-9]+$" maxlength="100" required>
+                                <input type="text" id="last_name" name="lastName" placeholder="last name" pattern="^[^0-9]+$" maxlength="100" required>
                             </div>
                         </div>
                         <div class="email_and_phone">
                             <div class="email">
                                 <label for="email_address" class="emailAddress">EMAIL ADDRESS</label>
-                                <input type="email" id="email_address" name="emailAddress" placeholder="email@email.com" value="" required> 
+                                <input type="email" id="email_address" name="emailAddress" placeholder="email@email.com" required> 
                             </div>
                             <div class="phone_number">
                                 <label for="phone_number" class="phoneNumber">PHONE NUMBER</label>
-                                <input type="tel" id="phone_number" name="phoneNumber" placeholder="xxx-xxx-xxxx" value=""  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                                <input type="tel" id="phone_number" name="phoneNumber" placeholder="xxx-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
                             </div>
                         </div>
                         <div class="pass_and_confirm_pass">
                             <div class="password">
                                 <label for="password" class="passWord">PASSWORD</label>
-                                <input type="text" id="password" name="passWord" value="" maxlength="16" required>
+                                <input type="password" id="password" name="passWord" maxlength="16" placeholder="****"  required>
                             </div>
                             <div class="password_confirmation">
                                 <label for="password_confirm" class="passWordConfirmation">CONFIRM PASSWORD</label>
-                                <input type="text" id="password_confirm" name="passWordConfirmation" value="" maxlength="16" required>
+                                <input type="password" id="password_confirm" name="passWordConfirmation" maxlength="16" placeholder="****" onkeypress="checkPass()" required>
                             </div>
                         </div>
-                    </form>
                 </div>
             </div>
             <div class="register_content">
                 <div class="register_and_login">
-                    <button class="register_btn">Create Account</button>
+                    <button type="submit" class="register_btn" onclick="btnCheckPass()">Create Account</button>
                     <p class="login">Already have an account? Log in.</p>
                 </div>
+            </form>
             </div>
         </div>
     </div>
