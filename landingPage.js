@@ -9,7 +9,7 @@ const pass_confirm_div = document.querySelector(".password_confirmation");
 
 const invalid_pass_msg = document.createElement("p");
 sign_up.forEach(btn => {
-    btn.addEventListener("onClick", () =>{
+    btn.addEventListener("click", () =>{
         location.href = "sign_up.html" //Lead user to sign up form
     });
 });

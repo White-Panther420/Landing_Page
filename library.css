@@ -1,0 +1,124 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background: black;
+}
+
+.Content{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    width: 80vw;
+    min-height: 100vh;
+}
+
+.Title{
+    background-color: #1F2937;
+    font-size: 24px;
+    padding: 15px 15px 15px 50px
+}
+
+h1{
+    color:rgb(255, 255, 255);
+    margin: 0;
+}
+
+.Books{
+    display: grid;
+    box-sizing: border-box; /*Prevents box from growing when adding padding*/
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    width: 100%;
+    min-height: 100vh;  /*Allows div to stretch to bottom even on 100% zoom*/
+    grid-template-columns: repeat(auto-fill, minmax(200px, 0.8fr));
+    grid-auto-rows: 300px;
+    gap: 30px;
+    justify-content: center;
+}
+
+.Add_Btn{
+    font-size: 150px;
+}
+
+.Add_Btn,
+.book
+{
+    display: flex;
+    flex-direction: column;
+    border: 4px rgb(0, 0, 0) solid;
+    font-weight: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.Book_form{
+    display: none; /*Hides form until we open it with JS*/
+    position: fixed;
+    z-index: 9;
+    padding: 5px 15px 0px 15px;
+    background-color: antiquewhite;
+    /*centering div*/
+    width: 400px;
+    height: 600px;
+    left: 50vw;
+    top: 50vh;
+    margin-top: -300px;
+    margin-left: -200px;
+}
+
+.Prompt{
+    font-size: 58px;
+    font-weight: 700;
+    text-align: center;
+}
+
+input
+{
+    margin-bottom: 30px;
+    font-size: 24px;
+    width: 100%;
+    height: 50px;
+    border: none;
+}
+
+.Form_Options{
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.Option{
+    height:40px;
+}
+
+.book{
+    display: none;
+}
+
+.Book_Info
+{
+    background-color: aqua;
+    text-align: center;
+    font-size: 24px;
+    height: 80%;
+    width: 100%;
+    margin: 0;
+}
+
+.Actions{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    background-color: red;
+    height: 20%;
+}
+
+button{
+    flex-grow: 1;
+}
