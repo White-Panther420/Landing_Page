@@ -56,17 +56,17 @@ h1{
 }
 
 .Book_form{
-    display: none; /*Hides form until we open it with JS*/
+    /*Hides form until we open it with JS*/
     position: fixed;
     z-index: 9;
     padding: 5px 15px 0px 15px;
     background-color: antiquewhite;
     /*centering div*/
     width: 400px;
-    height: 600px;
+    height: 670px;
     left: 50vw;
     top: 50vh;
-    margin-top: -300px;
+    margin-top: -350px;
     margin-left: -200px;
 }
 
@@ -83,6 +83,24 @@ input
     width: 100%;
     height: 50px;
     border: none;
+}
+
+.read{
+    display: flex;
+    margin-left: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.question{
+    font-size: 24px;
+}
+
+.Has_Read{
+    margin: 0;
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
 }
 
 .Form_Options{

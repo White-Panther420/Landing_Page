@@ -24,18 +24,23 @@
                     <button class="Has_Read">Read?</button>
                     <button class="Remove">-</button>
                 </div>
-           
             </div>
             <button class="Add_Btn">+</button>
             <div class="Book_form">
                 <p class="Prompt">Enter book information</p>
-                <input type="text" class="Title_Input">
-                <input type="text" class="Author_Input">
-                <input type="number" class="Page_Num_Input">
-                <div class="Form_Options">
-                    <button class="Option">Clear</button>
-                    <button class="Option">Submit</button>
-                </div>
+                <form class="form">
+                    <input type="text" class="Title_Input">
+                    <input type="text" class="Author_Input">
+                    <input type="number" class="Page_Num_Input">
+                    <div class="read">
+                        <p class="question">Have you read this book?</p>
+                        <input type="checkbox" class="Has_Read">
+                    </div>
+                    <div class="Form_Options">
+                        <button type="reset" class="Option Cancel">Cancel</button>
+                        <button type="submit" class="Option Submit">Submit</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
