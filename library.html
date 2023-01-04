@@ -16,25 +16,25 @@
         <div class="Books">
             <div class="book">
                 <div class="Book_Info">
-                    <p class="Book_Title">Hunger Games</p>
+                    <p class="Book_Title">The Hunger Games</p>
                     <p class="Book_author">Suzanne Collins</p>
                     <p class="Book_Pages">300 Pages</p>
                 </div>
                 <div class="Actions">
-                    <button class="Has_Read">Read?</button>
-                    <button class="Remove">-</button>
+                    <button class="Read">Read?</button>
+                    <button class="Remove">Remove</button>
                 </div>
             </div>
             <button class="Add_Btn">+</button>
             <div class="Book_form">
                 <p class="Prompt">Enter book information</p>
                 <form class="form">
-                    <input type="text" class="Title_Input">
-                    <input type="text" class="Author_Input">
-                    <input type="number" class="Page_Num_Input">
+                    <input type="text" class="Title_Input" name="title">
+                    <input type="text" class="Author_Input" name="author">
+                    <input type="number" class="Page_Num_Input" name="pages">
                     <div class="read">
                         <p class="question">Have you read this book?</p>
-                        <input type="checkbox" class="Has_Read">
+                        <input type="checkbox" class="Has_Read" name="checkbox">
                     </div>
                     <div class="Form_Options">
                         <button type="reset" class="Option Cancel">Cancel</button>
