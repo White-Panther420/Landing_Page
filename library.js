@@ -44,6 +44,7 @@ submit_btn.addEventListener("click", (e)=>{
 function displayBook(newBook){
     newBook.printInfo()
     let book = createNewElement("div", "book")
+    book.setAttribute("data-state", library.length-1)  //Give book an index corrwesponding to array of Book objects
     book.style.display = "block"
     let book_content = createNewElement("div", "Book_Info")  //To hold book information
     book.appendChild(book_content)
@@ -59,11 +60,24 @@ function displayBook(newBook){
     let remove_btn = createNewElement("button", "Remove", "Remove")
 
     read_btn.addEventListener("click", ()=>{
-        read_btn.classList.toggle("isRead")
+        if(read_btn.classList.toggle("isRead") == true){
+            read_btn.textContent = "Read"
+        }
+        else{
+            read_btn.textContent = "Not read"
+        }
+    })
+    remove_btn.addEventListener("click", ()=>{
+        deleteBook(book)
     })
 
+    //Coloring Read? button based on the form's checkbox
     if(newBook.hasRead === true){
+        read_btn.textContent = "Read"
         read_btn.classList.toggle("isRead")
+    }
+    else{
+        read_btn.textContent = "Not read"
     }
 
     book.appendChild(actions)
@@ -79,4 +93,16 @@ function createNewElement(elementName, elementClass, elementText){
     element.classList.add(elementClass)
     element.textContent = elementText
     return element
+}
+
+function deleteBook(book)
+{
+    console.log("HELLO!")
+    let book_index = book.getAttribute("data-state");
+    console.log(book_index)
+    library.splice(book_index, 1)
+    for (let i = 0; i < library.length; i++) {
+        console.log("BOOK TITLE " + library[i].title)
+    }
+    book_shelf.removeChild(book)
 }

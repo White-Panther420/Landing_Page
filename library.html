@@ -21,7 +21,7 @@
                     <p class="Book_Pages">300 Pages</p>
                 </div>
                 <div class="Actions">
-                    <button class="Read">Read?</button>
+                    <button class="Read">Not read</button>
                     <button class="Remove">Remove</button>
                 </div>
             </div>
@@ -29,11 +29,14 @@
             <div class="Book_form">
                 <p class="Prompt">Enter book information</p>
                 <form class="form">
-                    <input type="text" class="Title_Input" name="title">
-                    <input type="text" class="Author_Input" name="author">
-                    <input type="number" class="Page_Num_Input" name="pages">
+                    <label for="title" class="BookTiTle">Book Title</label>
+                    <input type="text" class="Title_Input" name="title"  title="Must enter a valid book title!" required>
+                    <label for="author" class="BookAuthor">Book Author</label>
+                    <input type="text" class="Author_Input" name="author" title="Must enter a valid book author!" required>
+                    <label for="pages" class="BookPages">Book Pages</label>
+                    <input type="number" class="Page_Num_Input" name="pages" title="Must enter a valid book page numberS" min="0" required>
                     <div class="read">
-                        <p class="question">Have you read this book?</p>
+                        <label for="checkbox" class="question">Have you read this book?</label>
                         <input type="checkbox" class="Has_Read" name="checkbox">
                     </div>
                     <div class="Form_Options">
