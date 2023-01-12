@@ -7,7 +7,7 @@ const add_btn = document.querySelector(".Add_Btn");
 const submit_btn = document.querySelector(".Submit")
 const cancel_btn = document.querySelector(".Cancel")
 
-/*-----------------------------------Quick Test------------------------------------------------
+/*-----------------------------------Quick Test------------------------------------------------*/
 let idx = 0;
 const newBook1 = new Book("The Hunger Games", "Suzanne Collins", "300", true)
 library.push(newBook1)
@@ -26,7 +26,7 @@ for (let i = 0; i < library.length; i++) {
 for (let i = 0; i < library.length; i++) {
     displayBook(library[i])
 }
------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------*/
 
 //Book object
 function Book(title, author, numPages, hasRead){
@@ -98,7 +98,7 @@ function displayBook(newBook){
     else{
         read_btn.textContent = "Not read"
     }
-    
+
     book.appendChild(actions)
     actions.appendChild(read_btn)
     actions.appendChild(remove_btn)

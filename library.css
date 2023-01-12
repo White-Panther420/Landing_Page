@@ -53,6 +53,8 @@ h1{
     font-weight: 1000;
     align-items: center;
     justify-content: center;
+    border: 2px solid brown;
+    border-radius: 15px;
 }
 
 .Book_form{
@@ -134,6 +136,7 @@ input
     width: 100%;
     margin: 0;
     padding: 5px;
+    border-radius: 15px;
 }
 
 .Book_Title,
@@ -147,16 +150,23 @@ input
     width: 100%;
     background-color: red;
     height: 20%;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
 .Read{
-    background-color: red;
+    background-color: #ff5454;
+    border-bottom-left-radius: 15px;
 }
 
 .isRead{
-    background-color: green;
+    background-color: #74f874;
+    border-bottom-left-radius: 15px;
 }
 
+.Remove{
+    border-bottom-right-radius: 15px;
+}
 button{
     flex-grow: 1;
 }
