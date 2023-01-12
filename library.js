@@ -7,6 +7,7 @@ const add_btn = document.querySelector(".Add_Btn");
 const submit_btn = document.querySelector(".Submit")
 const cancel_btn = document.querySelector(".Cancel")
 
+/*-----------------------------------Quick Test------------------------------------------------
 let idx = 0;
 const newBook1 = new Book("The Hunger Games", "Suzanne Collins", "300", true)
 library.push(newBook1)
@@ -25,15 +26,14 @@ for (let i = 0; i < library.length; i++) {
 for (let i = 0; i < library.length; i++) {
     displayBook(library[i])
 }
+-----------------------------------------------------------------------------------*/
+
 //Book object
 function Book(title, author, numPages, hasRead){
     this.title = title
     this.author = author
     this.numPages = numPages + " pages"
     this.hasRead = hasRead
-    this.printInfo = function(){
-        console.log(this.title + ", " + this.author + ", " + this.numPages + " pages, " + this.hasRead)
-    }
 } 
 
 add_btn.addEventListener("click", ()=>{
@@ -44,6 +44,7 @@ cancel_btn.addEventListener("click", ()=>{
 })
 
 submit_btn.addEventListener("click", (e)=>{
+    //Getting user input
     let title = document.querySelector('.Title_Input').value;
     let author = document.querySelector(".Author_Input").value;
     let pagesRead = document.querySelector(".Page_Num_Input").value;
@@ -52,7 +53,7 @@ submit_btn.addEventListener("click", (e)=>{
     library.push(newBook)
     displayBook(newBook)
     
-    pop_up_form.style.display = "none"
+    pop_up_form.style.display = "none"  //Hides pop up form
     
     form.reset()  //Clears the form
     e.preventDefault();  //Prevents form from sending data to backend by default
@@ -62,7 +63,7 @@ submit_btn.addEventListener("click", (e)=>{
 function displayBook(newBook){
   //  newBook.printInfo()
     let book = createNewElement("div", "book")
-    book.setAttribute("data-state", idx++)  //Give book an index corrwesponding to array of Book objects
+    book.setAttribute("data-state", library.length-1)  //Give book an index corrwesponding to array of Book objects
     book.style.display = "block"
     let book_content = createNewElement("div", "Book_Info")  //To hold book information
     book.appendChild(book_content)
@@ -97,7 +98,7 @@ function displayBook(newBook){
     else{
         read_btn.textContent = "Not read"
     }
-
+    
     book.appendChild(actions)
     actions.appendChild(read_btn)
     actions.appendChild(remove_btn)
@@ -115,30 +116,13 @@ function createNewElement(elementName, elementClass, elementText){
 
 function deleteBook(book)
 {
-    const bookNodeList = document.querySelectorAll(".book")
-    console.log("HELLO!: " + bookNodeList.length)
     let book_index = book.getAttribute("data-state");
-    console.log(book_index)
-    console.log("ARRAY LENGTH 1: " + library.length)
-    if(book_index === library.length-1){
-        library.pop()
-    }
-    else{
-        library.splice(book_index, 1)
-    }
+    library.splice(book_index, 1) //Remove book from array index that corresponds to book index
     book_shelf.removeChild(book)
-
-    console.log("ARRAY LENGTH 2: " + library.length)
-
+    const bookNodeList = document.querySelectorAll(".book")
     let j = 0;
-    for (let i = bookNodeList.length-3; i > -1; i--) {
-       bookNodeList[i].setAttribute("data-state", j)  //Give book an index corrwesponding to array of Book objects
+    for (let i = bookNodeList.length-2; i > -1; i--) {
+       bookNodeList[i].setAttribute("data-state", j)  //Give books new index to account for new array size
        j++
     }
-    for (let i = 0; i < library.length; i++) {
-        console.log("BOOK TITLE " + library[i].title)
-    }
-    
-    console.log("FINAL NODELIST LENGTH: " + bookNodeList.length)
-
 }
