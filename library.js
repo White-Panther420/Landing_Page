@@ -7,6 +7,24 @@ const add_btn = document.querySelector(".Add_Btn");
 const submit_btn = document.querySelector(".Submit")
 const cancel_btn = document.querySelector(".Cancel")
 
+let idx = 0;
+const newBook1 = new Book("The Hunger Games", "Suzanne Collins", "300", true)
+library.push(newBook1)
+const newBook2 = new Book("Hello", "Pop Smoke", "420", true)
+library.push(newBook2)
+const newBook3 = new Book("Fair Trade", "Drake", "100", true)
+library.push(newBook3)
+const newBook4 = new Book("Naruto Shippuden", "God", "6000", true)
+library.push(newBook4)
+const newBook5 = new Book("Super", "Cordae", "800", true)
+library.push(newBook5)
+
+for (let i = 0; i < library.length; i++) {
+    console.log(library[i].title)
+}
+for (let i = 0; i < library.length; i++) {
+    displayBook(library[i])
+}
 //Book object
 function Book(title, author, numPages, hasRead){
     this.title = title
@@ -42,9 +60,9 @@ submit_btn.addEventListener("click", (e)=>{
 
 //This function will create and display our book on the page
 function displayBook(newBook){
-    newBook.printInfo()
+  //  newBook.printInfo()
     let book = createNewElement("div", "book")
-    book.setAttribute("data-state", library.length-1)  //Give book an index corrwesponding to array of Book objects
+    book.setAttribute("data-state", idx++)  //Give book an index corrwesponding to array of Book objects
     book.style.display = "block"
     let book_content = createNewElement("div", "Book_Info")  //To hold book information
     book.appendChild(book_content)
@@ -97,12 +115,30 @@ function createNewElement(elementName, elementClass, elementText){
 
 function deleteBook(book)
 {
-    console.log("HELLO!")
+    const bookNodeList = document.querySelectorAll(".book")
+    console.log("HELLO!: " + bookNodeList.length)
     let book_index = book.getAttribute("data-state");
     console.log(book_index)
-    library.splice(book_index, 1)
+    console.log("ARRAY LENGTH 1: " + library.length)
+    if(book_index === library.length-1){
+        library.pop()
+    }
+    else{
+        library.splice(book_index, 1)
+    }
+    book_shelf.removeChild(book)
+
+    console.log("ARRAY LENGTH 2: " + library.length)
+
+    let j = 0;
+    for (let i = bookNodeList.length-3; i > -1; i--) {
+       bookNodeList[i].setAttribute("data-state", j)  //Give book an index corrwesponding to array of Book objects
+       j++
+    }
     for (let i = 0; i < library.length; i++) {
         console.log("BOOK TITLE " + library[i].title)
     }
-    book_shelf.removeChild(book)
+    
+    console.log("FINAL NODELIST LENGTH: " + bookNodeList.length)
+
 }
