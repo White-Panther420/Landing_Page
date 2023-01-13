@@ -30,11 +30,11 @@
                 <p class="Prompt">Enter book information</p>
                 <form class="form">
                     <label for="title" class="BookTiTle">Book Title</label>
-                    <input type="text" class="Title_Input" name="Title" id="title" pattern="^[^0-9]+$" required>
+                    <input type="text" id="title" name="BookTiTle" class="Title_Input"  title="Please enter valid book title!" placeholder="The Hunger Games" pattern="^[^0-9]+$" required>
                     <label for="author" class="BookAuthor">Book Author</label>
-                    <input type="text" class="Author_Input" name="author" pattern="^[^0-9]+$" required>
+                    <input type="text" class="Author_Input" name="author" title="Please enter valid author name!" placeholder="Suzanne Collins" pattern="^[^0-9]+$" required>
                     <label for="pages" class="BookPages">Book Pages</label>
-                    <input type="number" class="Page_Num_Input" name="pages" min="0" required>
+                    <input type="number" class="Page_Num_Input" name="pages" title="Please enter valid number of book pages!" placeholder="374" min="0" required>
                     <div class="read">
                         <label for="checkbox" class="question">Have you read this book?</label>
                         <input type="checkbox" class="Has_Read" name="checkbox">

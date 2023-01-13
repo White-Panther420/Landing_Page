@@ -43,7 +43,7 @@ cancel_btn.addEventListener("click", ()=>{
     pop_up_form.style.display = "none"  //Hides form
 })
 
-submit_btn.addEventListener("click", (e)=>{
+form.addEventListener("submit", (e)=>{
     //Getting user input
     let title = document.querySelector('.Title_Input').value;
     let author = document.querySelector(".Author_Input").value;
