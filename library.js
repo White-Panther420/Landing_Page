@@ -56,7 +56,7 @@ submit_btn.addEventListener("click", (e)=>{
     pop_up_form.style.display = "none"  //Hides pop up form
     
     form.reset()  //Clears the form
-    e.preventDefault();  //Prevents form from sending data to backend by default
+   // e.preventDefault();  //Prevents form from sending data to backend by default
 })
 
 //This function will create and display our book on the page
