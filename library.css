@@ -88,6 +88,19 @@ input
     border: none;
 }
 
+input:invalid{
+    border: 2px solid #ff5454;
+}
+
+input:valid{
+    border: 2px solid #74f874;
+}
+
+input:placeholder-shown /*Prevents the fields from automatically being marked as invalid upon the page loading in*/
+{
+    border: 1px solid black;
+}
+
 .read{
     display: flex;
     margin-left: 20px;
