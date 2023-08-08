@@ -45,18 +45,40 @@ cancel_btn.addEventListener("click", ()=>{
 
 form.addEventListener("submit", (e)=>{
     //Getting user input
-    let title = document.querySelector('.Title_Input').value;
-    let author = document.querySelector(".Author_Input").value;
-    let pagesRead = document.querySelector(".Page_Num_Input").value;
-    let checkBox = document.querySelector(".Has_Read");
-    const newBook = new Book(title, author, pagesRead, checkBox.checked)
-    library.push(newBook)
-    displayBook(newBook)
+    const errorMessageToBeCleared = document.querySelector(".active")
+    if(errorMessageToBeCleared !== null){
+        form.removeChild(errorMessageToBeCleared)
+    }
+    let Title_Input = document.querySelector('.Title_Input');
+    let title = Title_Input.value
+    let Author_Input = document.querySelector(".Author_Input");
+    let author = Author_Input.value
+    let Page_Num_Input = document.querySelector(".Page_Num_Input");
+    let pagesRead = Page_Num_Input.value
+    let checkBoxField = document.querySelector(".Has_Read");
     
-    pop_up_form.style.display = "none"  //Hides pop up form
-    
-    form.reset()  //Clears the form
-    e.preventDefault();  //Prevents form from sending data to backend by default
+    const formFields = {
+        Title_Input: ['A book title is required', 'Book title length must be greater than 1 character'],
+        Author_Input: ['Author name is required', 'Author\'s name length must be greater than 1 character'],
+        Page_Num_Input: ['Number of book pages is required', 'Number of pages cannot be less than 1', 'Number of pages cannot be greater than 999,999','Only numbers 0-9 are allowed']
+    }   
+    const errorMessage = checkFormValidity(formFields)
+    if(errorMessage.textContent !== ""){
+        e.preventDefault();  //Prevents form from sending data to backend by default
+        const form_options = document.querySelector(".Form_Options")
+        form.insertBefore(errorMessage, form_options)
+        console.log("Try again")
+    }else{
+        console.log("Success!")
+        const newBook = new Book(title, author, pagesRead, checkBoxField.checked)
+        library.push(newBook)
+        displayBook(newBook)
+        
+        pop_up_form.style.display = "none"  //Hides pop up form
+        
+        form.reset()  //Clears the form
+        e.preventDefault();  //Prevents form from sending data to backend by default
+    }
 })
 
 //This function will create and display our book on the page
@@ -124,5 +146,37 @@ function deleteBook(book)
     for (let i = bookNodeList.length-2; i > -1; i--) {
        bookNodeList[i].setAttribute("data-state", j)  //Give books new index to account for new array size
        j++
+    }
+}
+
+const checkFormValidity = (formFieldObject)=>{
+    const errorMessage = createNewElement('span', 'error', '')
+    for (const key in formFieldObject) {
+        if (Object.hasOwnProperty.call(formFieldObject, key)) {
+            const formField = document.querySelector(`.${key}`)
+            const formFieldErrorMsgOptions = formFieldObject[key];
+            if(formField.validity.valid){
+                errorMessage.textContent = ''
+                errorMessage.classList = 'error'
+            }else{
+                errorMessage.textContent = createErrorMsg(formField, formFieldErrorMsgOptions)
+                errorMessage.classList.add('active')
+                console.log("THE ERROR: " + errorMessage.textContent)
+                return errorMessage;
+            }
+        }
+    }
+    return errorMessage
+}
+
+const createErrorMsg = (formField, errorMsgOptions)=>{
+    if(formField.validity.valueMissing){
+        return errorMsgOptions[0]
+    }else if(formField.validity.tooShort){
+        return errorMsgOptions[1]
+    }else if(formField.validity.rangeUnderflow){
+        return errorMsgOptions[1]
+    }else if(formField.validity.rangeOverflow){
+        return errorMsgOptions[2]
     }
 }

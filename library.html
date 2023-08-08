@@ -28,16 +28,20 @@
             <button class="Add_Btn">+</button>
             <div class="Book_form">
                 <p class="Prompt">Enter book information</p>
-                <form class="form">
-                    <label for="title" class="BookTiTle">Book Title</label>
-                    <input type="text" id="title" name="BookTiTle" class="Title_Input"  title="Please enter valid book title!" placeholder="The Hunger Games" pattern="^[^0-9]+$" required>
-                    <label for="author" class="BookAuthor">Book Author</label>
-                    <input type="text" class="Author_Input" name="author" title="Please enter valid author name!" placeholder="Suzanne Collins" pattern="^[^0-9]+$" required>
-                    <label for="pages" class="BookPages">Book Pages</label>
-                    <input type="number" class="Page_Num_Input" name="pages" title="Please enter valid number of book pages!" placeholder="374" min="0" required>
+                <form class="form" novalidate>
+                    <label for="title" class="BookTiTle">
+                        <span>Book Title (required)</span>
+                        <input type="text" id="title" name="BookTiTle" class="Title_Input"  title="Please enter valid book title!" placeholder="The Hunger Games" required>
+                    </label>
+                    <label for="author" class="BookAuthor"></label>
+                        <span>Book Author (required)</span>
+                        <input type="text" class="Author_Input" id='author' name="author" title="Please enter valid author name!" placeholder="Suzanne Collins" required>
+                    </label>
+                    <label for="pages" class="BookPages">Book Pages (required)</label>
+                    <input type="number" min="1" max="999999" id='pages' class="Page_Num_Input" name="pages" title="Please enter valid number of book pages!" placeholder="374" required>
                     <div class="read">
                         <label for="checkbox" class="question">Have you read this book?</label>
-                        <input type="checkbox" class="Has_Read" name="checkbox">
+                        <input type="checkbox" class="Has_Read" name="checkbox" id="checkbox">
                     </div>
                     <div class="Form_Options">
                         <button type="reset" class="Option Cancel">Cancel</button>
